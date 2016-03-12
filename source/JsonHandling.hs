@@ -16,7 +16,7 @@ import Control.Applicative
 
 data File = File { fileName :: String
                  , content :: String
-                 } deriving (Show, Generic)
+                 } deriving (Show, Generic, Eq)
 
 instance FromJSON File
 instance ToJSON File
@@ -24,7 +24,7 @@ instance ToJSON File
 data Folder = Folder { folderName :: String
                      , files :: [File]
                      , folders :: [Folder]
-                     } deriving (Show, Generic)
+                     } deriving (Show, Generic, Eq)
 
 instance FromJSON Folder
 instance ToJSON Folder
